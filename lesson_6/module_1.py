@@ -32,4 +32,6 @@ class TrafficLight:
         time.sleep(GREEN)
 
 light = TrafficLight()
-light.running()
+
+while input("Для активации светофора нажмите Enter") == '':
+     light.running()

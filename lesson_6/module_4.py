@@ -59,28 +59,21 @@ class PoliceCar(Car):
         super().__init__(name, color)
         self.is_police = True
 
+
 diesel = TownCar("Мазда")
 gas = PoliceCar("Форд")
 shumaher = SportCar("Субару")
 
 racers = [diesel, gas, shumaher]
 actions = ["go", "turn", "stop"]
-dict = {
+parameter_dict = {
     "go": 80,
     "turn": "налево"
 }
 for action in actions:
     for racer in racers:
         method = getattr(racer, action)
-        if action in dict:
-            method(dict[action])
+        if action in parameter_dict:
+            method(parameter_dict[action])
         else:
             method()
-
-# for car in racers:
-#     car.go(40)
-#     car.turn("налево")
-#     car.go(80)
-#     car.turn("направо")
-#     car.show_speed()
-#     car.stop()
